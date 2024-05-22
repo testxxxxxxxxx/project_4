@@ -1,7 +1,8 @@
 #include <iostream>
-#include <../include/functions.cpp>
+#include "../include/MatrixGraph.hpp"
 
 using namespace std;
+using namespace Graph;
 
 int main(int argc, char *argv[])
 {
