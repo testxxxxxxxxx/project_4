@@ -7,7 +7,7 @@ using namespace Graph;
 MatrixGraph MatrixGraph::operator=(const MatrixGraph &m)
 {
 
-    return MatrixGraph(this->nodes, this->saturation);
+    return MatrixGraph();
 }
 void MatrixGraph::operator()(int o)
 {
@@ -21,13 +21,5 @@ void MatrixGraph::operator()(int o)
 
         return *te;
     };
-
-}
-void MatrixGraph::generateHamilton()
-{
-
-}
-void MatrixGraph::generateNonHamilton()
-{
 
 }

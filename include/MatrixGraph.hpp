@@ -6,24 +6,19 @@ namespace Graph
 {
     class MatrixGraph
     {
-        int** edges;
-
-        int nodes;
-        double saturation;
-
         public:
 
-        MatrixGraph(int nodes, double saturation): nodes(nodes), saturation(saturation)
-        {
+            int** edges;
+            int nodes;
 
-        }
-        virtual ~MatrixGraph() = default;
-        MatrixGraph operator=(const MatrixGraph &m);
+            MatrixGraph()
+            {
 
-        void operator()(int o);
+            }
+            virtual ~MatrixGraph() = default;
+            MatrixGraph operator=(const MatrixGraph &m);
 
-        void generateHamilton();
-        void generateNonHamilton();
+            void operator()(int o);
 
     };
 
