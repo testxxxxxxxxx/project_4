@@ -8,7 +8,6 @@ namespace Generator
 {
     class GraphGenerator
     {
-        Graph::MatrixGraph *matrixGraph;
         int nodes;
         double saturation;
 
@@ -25,8 +24,8 @@ namespace Generator
 
             void operator()(int o);
 
+            MatrixGraph* generateAcyclic();
             MatrixGraph* generateHamilton();
-            MatrixGraph* generateNonHamilton();
 
     };
 
