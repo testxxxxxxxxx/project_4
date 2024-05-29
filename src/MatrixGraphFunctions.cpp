@@ -27,7 +27,7 @@ void MatrixGraph::print()
 {
     //Print matrix representation of graph
 
-    cout<<" |";
+    cout<<"  |";
 
     for(int i = 0; i < this->nodes; i++)
     {
