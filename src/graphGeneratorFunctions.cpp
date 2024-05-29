@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/GraphGenerator.hpp"
 #include <random>
+#include <math.h>
 
 using namespace std;
 using namespace Generator;
@@ -25,7 +26,7 @@ void GraphGenerator::operator()(int o)
     };
 
 }
-MatrixGraph* GraphGenerator::generateAcyclic()
+MatrixGraph* GraphGenerator::generateHamiltonian()
 {
     MatrixGraph *matrixGraph = new MatrixGraph();
 
@@ -38,18 +39,32 @@ MatrixGraph* GraphGenerator::generateAcyclic()
 
     }
 
-    int numberOfEdges = (this->nodes * (this->nodes - 1 / 2) * (this->saturation / 100));
+    int numberOfEdges = pow(this->nodes, 2) * (saturation / 100);
     int howManyE = 0;
+    int x, y;
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, this->nodes);
 
-    //Generate acyclic graph
+    //Generate undirected graph
 
     for(int i = 0; i < this->nodes; i++)
     {
         for(int j = 0; j < this->nodes; j++)
         {
+            x = dist(mt);
+            y = dist(mt);
+
+            while(matrixGraph->edges[x][y] == 1 || x == y)
+            {
+                x = dist(mt);
+                y = dist(mt);
+
+            }
+
             if(howManyE < numberOfEdges)
             {
-                matrixGraph->edges[i][j] = 1;
+                matrixGraph->edges[x][y] = 1;
                 howManyE++;
             }
 
@@ -58,11 +73,4 @@ MatrixGraph* GraphGenerator::generateAcyclic()
     }
 
     return matrixGraph;
-}
-MatrixGraph* GraphGenerator::generateHamilton()
-{
-    //Generate acyclic graph
-
-    MatrixGraph *MatrixGraph = this->generateAcyclic();
-
 }

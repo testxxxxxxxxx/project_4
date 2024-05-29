@@ -24,8 +24,8 @@ namespace Generator
 
             void operator()(int o);
 
-            MatrixGraph* generateAcyclic();
-            MatrixGraph* generateHamilton();
+            MatrixGraph* generateHamiltonian();
+            MatrixGraph* generateNonHamiltonian();
 
     };
 
