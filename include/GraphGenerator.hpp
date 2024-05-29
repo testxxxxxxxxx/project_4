@@ -1,5 +1,11 @@
+#ifndef GRAPH_GENERATOR
+
+#define GRAPH_GENERATOR 1
+
 #include <iostream>
 #include "MatrixGraph.hpp"
+
+#pragma once
 
 using namespace std;
 using namespace Graph;
@@ -30,3 +36,5 @@ namespace Generator
     };
 
 };
+
+#endif

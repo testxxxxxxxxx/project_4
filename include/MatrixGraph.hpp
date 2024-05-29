@@ -1,4 +1,10 @@
+#ifndef MATRIX_GRAPH
+
+#define MATRIX_GRAPH 1
+
 #include <iostream>
+
+#pragma once
 
 using namespace std;
 
@@ -25,3 +31,5 @@ namespace Graph
     };
 
 };
+
+#endif
