@@ -23,3 +23,32 @@ void MatrixGraph::operator()(int o)
     };
 
 }
+void MatrixGraph::print()
+{
+    //Print matrix representation of graph
+
+    cout<<" |";
+
+    for(int i = 0; i < this->nodes; i++)
+    {
+        cout<<" "<<i;
+
+    }
+
+    cout<<endl;
+
+    for(int i = 0; i < this->nodes; i++)
+    {
+        cout<<i<<" |";
+
+        for(int j = 0; j < this->nodes; j++)
+        {
+            cout<<" "<<this->edges[i][j];
+
+        }
+
+        cout<<endl;
+
+    }
+
+}

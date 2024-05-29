@@ -29,6 +29,7 @@ MatrixGraph* GraphGenerator::generateAcyclic()
 {
     MatrixGraph *matrixGraph = new MatrixGraph();
 
+    matrixGraph->nodes = this->nodes;
     matrixGraph->edges = new int*[this->nodes];
 
     for(int i = 0; i < this->nodes; i++)
@@ -63,7 +64,5 @@ MatrixGraph* GraphGenerator::generateHamilton()
     //Generate acyclic graph
 
     MatrixGraph *MatrixGraph = this->generateAcyclic();
-
-    
 
 }

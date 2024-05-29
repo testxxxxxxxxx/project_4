@@ -20,6 +20,8 @@ namespace Graph
 
             void operator()(int o);
 
+            void print();
+
     };
 
 };
