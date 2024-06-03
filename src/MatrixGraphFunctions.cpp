@@ -52,3 +52,33 @@ void MatrixGraph::print()
     }
 
 }
+vector<int> MatrixGraph::findEulerCycle()
+{
+    vector<int> cycle;
+
+    if(!this->isCycle())
+        return cycle;
+        
+}
+bool MatrixGraph::isCycle()
+{
+    int degree = 0;
+
+    for(int i = 0; i < this->nodes; i++)
+    {
+        degree = 0;
+
+        for(int j = 0; j < this->nodes; j++)
+        {
+            if(this->edges[i][j] == 1)
+                degree++;
+
+        }
+
+        if(degree % 2 != 0)
+            return false;
+
+    }
+
+    return true;
+}

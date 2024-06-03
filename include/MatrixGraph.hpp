@@ -3,6 +3,7 @@
 #define MATRIX_GRAPH 1
 
 #include <iostream>
+#include <vector>
 
 #pragma once
 
@@ -27,6 +28,11 @@ namespace Graph
             void operator()(int o);
 
             void print();
+            vector<int> findEulerCycle();
+
+        private:
+
+            bool isCycle();
 
     };
 
