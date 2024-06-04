@@ -27,3 +27,16 @@ bool Cycle::search(int value)
 
     return false;
 }
+bool Cycle::isCorrect()
+{
+    vector<int>::iterator startElement;
+    vector<int>::iterator endElement;
+
+    startElement = this->content.begin();
+    endElement = this->content.end();
+
+    if(*startElement == *endElement)
+        return true;
+
+    return false;
+}

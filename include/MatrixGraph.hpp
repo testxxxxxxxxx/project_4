@@ -3,11 +3,12 @@
 #define MATRIX_GRAPH 1
 
 #include <iostream>
-#include <vector>
+#include "../include/Cycle.hpp"
 
 #pragma once
 
 using namespace std;
+using namespace GraphCycle;
 
 namespace Graph
 {
@@ -28,7 +29,7 @@ namespace Graph
             void operator()(int o);
 
             void print();
-            vector<int> findEulerCycle();
+            Cycle* findEulerCycle();
 
         private:
 

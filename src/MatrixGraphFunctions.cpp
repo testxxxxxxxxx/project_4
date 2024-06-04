@@ -1,8 +1,10 @@
 #include <iostream>
 #include "../include/MatrixGraph.hpp"
+#include "../include/Cycle.hpp"
 
 using namespace std;
 using namespace Graph;
+using namespace GraphCycle;
 
 MatrixGraph MatrixGraph::operator=(const MatrixGraph &m)
 {
@@ -52,11 +54,12 @@ void MatrixGraph::print()
     }
 
 }
-vector<int> MatrixGraph::findEulerCycle()
+Cycle* MatrixGraph::findEulerCycle()
 {
     //search euler cycle in graph
 
-    vector<int> cycle;
+    Cycle *cycle = new Cycle();
+
     int currentVertical = 0;
 
     if(!this->isCycle())
@@ -68,13 +71,18 @@ vector<int> MatrixGraph::findEulerCycle()
         {
             for(int x = 0; x < this->nodes; x++)
             {
-                if(this->edges[currentVertical][x] == 1 /* && cycle not contain */)
-                    cycle.push_back(x); 
+                if(this->edges[currentVertical][x] == 1 && !cycle->search(x))
+                {
+                    cycle->add(x);
+                    currentVertical = x;
+
+                } 
 
             }
 
         }
 
+        
     }
         
 }
