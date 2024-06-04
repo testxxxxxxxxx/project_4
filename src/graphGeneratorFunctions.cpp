@@ -104,5 +104,16 @@ MatrixGraph* GraphGenerator::generateNonHamiltonian()
 
     matrixGraph->edges[matrixGraph->nodes - 1][0] = 0;
 
+    for(int i = 1; i < matrixGraph->nodes; i++)
+    {
+        if(matrixGraph->edges[matrixGraph->nodes - 1][i] != 1)
+        {
+            matrixGraph->edges[matrixGraph->nodes - 1][i] = 1;
+
+            break;
+        }
+
+    }
+
     return matrixGraph;
 }

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	//MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian(); 
 
-	MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian();
+	MatrixGraph *matrixGraph = graphGenerator->generateNonHamiltonian();
 
 	matrixGraph->print();
 

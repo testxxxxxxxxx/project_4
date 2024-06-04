@@ -23,7 +23,6 @@ namespace GraphCycle
         void add(int value); //add element to cycle
         void clear(); //clear all cycle
         bool search(int value); //search element in cycle
-        bool isCorrect();
         void print(); //print cycle content
         int size(); //get cycle size      
 

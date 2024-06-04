@@ -87,10 +87,6 @@ Cycle* MatrixGraph::findEulerCycle()
 
         }
 
-        cout<<"curr: "<<currentVertical<<endl;
-        cout<<"start: "<<startVertical<<endl;
-        cout<<cycle->isCorrect()<<endl;
-
         if(cycle->size() == this->nodes && startVertical == currentVertical)
             return cycle;
 
