@@ -30,57 +30,62 @@ MatrixGraph* GraphGenerator::generateHamiltonian()
 {
     MatrixGraph *matrixGraph = new MatrixGraph();
 
-    matrixGraph->nodes = this->nodes;
-    matrixGraph->edges = new int*[this->nodes];
-
-    for(int i = 0; i < this->nodes; i++)
+    while(!matrixGraph->isCycle())
     {
-        matrixGraph->edges[i] = new int[this->nodes];
 
-    }
+        matrixGraph->nodes = this->nodes;
+        matrixGraph->edges = new int*[this->nodes];
 
-    int numberOfEdges = pow(this->nodes, 2) * (saturation / 100);
-    int howManyE = this->nodes + 1;
-    int x, y;
-    random_device rd;
-    mt19937 mt(rd());
-    uniform_int_distribution<int> dist(0, this->nodes - 1);
-
-    int it = 1;
-
-    //Generate hamilton cycle
-
-    for(int i = 0; i < this->nodes; i++)
-    {
-        if(i == this->nodes - 1)
-            matrixGraph->edges[this->nodes - 1][0] = 1;
-
-        matrixGraph->edges[i][it] = 1;
-
-        it++;
-
-    }
-
-    //Generate undirected graph
-
-    for(int i = 0; i < this->nodes; i++)
-    {
-        for(int j = 0; j < this->nodes; j++)
+        for(int i = 0; i < this->nodes; i++)
         {
-            x = dist(mt);
-            y = dist(mt);
+            matrixGraph->edges[i] = new int[this->nodes];
 
-            while(matrixGraph->edges[x][y] == 1)
+        }
+
+        int numberOfEdges = pow(this->nodes, 2) * (saturation / 100);
+        int howManyE = this->nodes + 1;
+        int x, y;
+        random_device rd;
+        mt19937 mt(rd());
+        uniform_int_distribution<int> dist(0, this->nodes - 1);
+
+        int it = 1;
+
+        //Generate hamilton cycle
+
+        for(int i = 0; i < this->nodes; i++)
+        {
+            if(i == this->nodes - 1)
+                matrixGraph->edges[this->nodes - 1][0] = 1;
+
+            matrixGraph->edges[i][it] = 1;
+
+            it++;
+
+        }
+
+        //Generate undirected graph
+
+        for(int i = 0; i < this->nodes; i++)
+        {
+            for(int j = 0; j < this->nodes; j++)
             {
                 x = dist(mt);
                 y = dist(mt);
 
-            }
+                while(matrixGraph->edges[x][y] == 1)
+                {
+                    x = dist(mt);
+                    y = dist(mt);
 
-            if(howManyE <= numberOfEdges)
-            {
-                matrixGraph->edges[x][y] = 1;
-                howManyE++;
+                }
+
+                if(howManyE <= numberOfEdges)
+                {
+                    matrixGraph->edges[x][y] = 1;
+                    howManyE++;
+                }
+
             }
 
         }

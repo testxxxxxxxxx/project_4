@@ -61,12 +61,16 @@ Cycle* MatrixGraph::findEulerCycle()
     Cycle *cycle = new Cycle();
 
     int currentVertical = 0;
+    int startVertical = 0;
 
     if(!this->isCycle())
         return cycle;
 
     for(int i = 0; i < this->nodes; i++)
     {
+        currentVertical = i;
+        startVertical = i;
+
         for(int j = 0; j < this->nodes; j++)
         {
             for(int x = 0; x < this->nodes; x++)
@@ -75,6 +79,7 @@ Cycle* MatrixGraph::findEulerCycle()
                 {
                     cycle->add(x);
                     currentVertical = x;
+                    break;
 
                 } 
 
@@ -82,13 +87,26 @@ Cycle* MatrixGraph::findEulerCycle()
 
         }
 
-        
+        cout<<"curr: "<<currentVertical<<endl;
+        cout<<"start: "<<startVertical<<endl;
+        cout<<cycle->isCorrect()<<endl;
+
+        if(cycle->size() == this->nodes && startVertical == currentVertical)
+            return cycle;
+
+        cycle->clear();    
     }
-        
+
+    cycle->clear();
+
+    return cycle;    
 }
 bool MatrixGraph::isCycle()
 {
     //return true if every vertical has even degree
+
+    if(this->nodes == 0)
+        return false;
 
     int degree = 0;
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/CommandLineEngine.hpp"
 #include "../include/GraphGenerator.hpp"
+#include "../include/Cycle.hpp"
 
 using namespace std;
 using namespace Command;
@@ -13,9 +14,15 @@ int main(int argc, char *argv[])
 
 	GraphGenerator *graphGenerator = new GraphGenerator(7, 70);
 
-	MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian(); 
+	//MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian(); 
+
+	MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian();
 
 	matrixGraph->print();
+
+	Cycle *cycle = matrixGraph->findEulerCycle();
+
+	cycle->print();	
 
 	CommandLineEngine *cmd = new CommandLineEngine(matrixGraph);
 

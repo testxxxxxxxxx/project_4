@@ -30,9 +30,6 @@ namespace Graph
 
             void print();
             Cycle* findEulerCycle();
-
-        private:
-
             bool isCycle();
 
     };
