@@ -54,14 +54,34 @@ void MatrixGraph::print()
 }
 vector<int> MatrixGraph::findEulerCycle()
 {
+    //search euler cycle in graph
+
     vector<int> cycle;
+    int currentVertical = 0;
 
     if(!this->isCycle())
         return cycle;
+
+    for(int i = 0; i < this->nodes; i++)
+    {
+        for(int j = 0; j < this->nodes; j++)
+        {
+            for(int x = 0; x < this->nodes; x++)
+            {
+                if(this->edges[currentVertical][x] == 1 /* && cycle not contain */)
+                    cycle.push_back(x); 
+
+            }
+
+        }
+
+    }
         
 }
 bool MatrixGraph::isCycle()
 {
+    //return true if every vertical has even degree
+
     int degree = 0;
 
     for(int i = 0; i < this->nodes; i++)
