@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	//Test case:
 
-	GraphGenerator *graphGenerator = new GraphGenerator(7, 70);
+	GraphGenerator *graphGenerator = new GraphGenerator(7, 50);
 
 	//MatrixGraph *matrixGraph = graphGenerator->generateHamiltonian(); 
 
