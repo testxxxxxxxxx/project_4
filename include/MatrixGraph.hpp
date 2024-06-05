@@ -31,6 +31,9 @@ namespace Graph
             void print();
             Cycle* findEulerCycle();
             bool isCycle();
+            bool isSafe(int v, vector<int> &path, int pos);
+            bool hamCycleUtil(vector<int> &path, int pos, Cycle *cycle);
+            bool findHamiltonianCycle();
 
     };
 
