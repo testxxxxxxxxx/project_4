@@ -25,8 +25,6 @@ namespace Command
 
             CommandLineEngine operator=(const CommandLineEngine &c);
 
-            void operator()(int o);
-
             void start();
 
     };

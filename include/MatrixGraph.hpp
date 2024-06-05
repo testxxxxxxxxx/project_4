@@ -26,8 +26,6 @@ namespace Graph
             virtual ~MatrixGraph() = default;
             MatrixGraph operator=(const MatrixGraph &m);
 
-            void operator()(int o);
-
             void print();
             Cycle* findEulerCycle();
             bool isCycle();

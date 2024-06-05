@@ -28,8 +28,6 @@ namespace Generator
 
             GraphGenerator operator=(const GraphGenerator &g);
 
-            void operator()(int o);
-
             MatrixGraph* generateHamiltonian();
             MatrixGraph* generateNonHamiltonian();
 
