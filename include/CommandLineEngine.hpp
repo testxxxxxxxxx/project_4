@@ -3,11 +3,12 @@
 #define COMMAND_LINE_ENGINE 1
 
 #include <iostream>
-#include "../include/GraphGenerator.hpp"
+#include "../include/MatrixGraph.hpp"
 
 #pragma once
 
 using namespace std;
+using namespace Graph;
 
 namespace Command
 {
@@ -26,6 +27,7 @@ namespace Command
             CommandLineEngine operator=(const CommandLineEngine &c);
 
             void start();
+            void execute(string command);
 
     };
 
