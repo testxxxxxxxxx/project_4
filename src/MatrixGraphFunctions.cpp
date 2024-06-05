@@ -165,7 +165,7 @@ bool MatrixGraph::findHamiltonianCycle()
     path[0] = 0;
     if(this->hamCycleUtil(path, 1, cycle) == false)
     {
-        cout << "Hamiltonian cycle do not exists!" << endl;
+        cout << "Hamiltonian cycle has not been found!" << endl;
         return false;
     }
 

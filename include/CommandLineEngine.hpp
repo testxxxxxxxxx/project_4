@@ -27,6 +27,9 @@ namespace Command
             CommandLineEngine operator=(const CommandLineEngine &c);
 
             void start();
+
+        private:
+        
             void execute(string command);
 
     };
