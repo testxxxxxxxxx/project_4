@@ -9,7 +9,7 @@ class File:
         self.__mode: str = mode
         self.__dir: str = path + name
 
-    def save(self, nodes: int, saturation: int = 0) -> None:
+    def save(self, nodes: int, saturation: int = 0, command: str = '') -> None:
 
         with open(self.__dir, self.__mode) as f:
 
@@ -18,27 +18,29 @@ class File:
             if saturation > 0:
                 f.write(str(saturation) + '\n')
 
+            f.write(command + '\n')
+
 class NumberGenerator():
 
     def __init__(self, numberOfNodes: int) -> None:
 
         self.__numberOfNodes = numberOfNodes
 
-    def generate(self, saturation: int) -> int:
+    def generate(self, saturation: int, command: str) -> int:
 
         path: str = './benchmark_data/'        
 
-        for i in range(self.__numberOfNodes + 1):
+        for i in range(2, self.__numberOfNodes + 1):
 
             file: File = File(path, str(i), 'w')
 
-            file.save(pow(2, i), saturation)
+            file.save(pow(2, i), saturation, command)
 
 def main() -> None:
 
     numberGenerator: NumberGenerator = NumberGenerator(19)
 
-    numberGenerator.generate(30)
+    numberGenerator.generate(30, 'EulerCycle')
 
 if __name__ == '__main__':
     main()
