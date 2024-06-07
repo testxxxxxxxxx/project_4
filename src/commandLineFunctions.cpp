@@ -1,5 +1,7 @@
 #include <iostream>
 #include "../include/CommandLineEngine.hpp"
+#include <fstream>
+#include <chrono>
 
 using namespace std;
 using namespace Command;
@@ -14,13 +16,28 @@ CommandLineEngine CommandLineEngine::operator=(const CommandLineEngine &c)
 void CommandLineEngine::start()
 {
     string command;
+    string path = "./benchmark_results";
+    string name = "results.csv";
+    string dir = path + name;
+
+    fstream file;
+
+    file.open(dir, ios::out | ios::app);
 
     while(true)
     {
         cout<<"action>";
         cin>>command;
 
+        auto start = chrono::high_resolution_clock::now();
+
         this->execute(command);
+
+        auto stop = chrono::high_resolution_clock::now();
+
+        auto time = chrono::duration_cast<chrono::milliseconds>(stop - start);
+
+        file<<to_string(matrixGraph->nodes) + ","<<command+","<<to_string(time.count())<<endl;
 
     }
 }
