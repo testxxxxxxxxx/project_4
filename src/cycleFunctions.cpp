@@ -27,7 +27,7 @@ bool Cycle::search(int value)
     for(it = this->content.begin(); it != this->content.end(); it++)
     {
         if(*it == value)
-            return true;
+            return true; 
 
     }
 

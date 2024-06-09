@@ -16,7 +16,7 @@ CommandLineEngine CommandLineEngine::operator=(const CommandLineEngine &c)
 void CommandLineEngine::start()
 {
     string command;
-    string path = "./benchmark_results";
+    string path = "./benchmark/benchmark_results/";
     string name = "results.csv";
     string dir = path + name;
 

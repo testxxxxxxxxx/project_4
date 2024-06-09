@@ -19,6 +19,7 @@ class File:
                 f.write(str(saturation) + '\n')
 
             f.write(command + '\n')
+            f.write("Exit")
 
 class NumberGenerator():
 
@@ -38,7 +39,7 @@ class NumberGenerator():
 
 def main() -> None:
 
-    numberGenerator: NumberGenerator = NumberGenerator(19)
+    numberGenerator: NumberGenerator = NumberGenerator(10)
 
     numberGenerator.generate(30, 'EulerCycle')
 

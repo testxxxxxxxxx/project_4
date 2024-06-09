@@ -27,9 +27,7 @@ int main(int argc, char *argv[])
 
 		cout<<"nodes>";
 		cin>>nodes;
-
-		cout<<endl;
-
+		
 		cout<<"saturation>";
 		cin>>saturation;
 
