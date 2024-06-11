@@ -76,6 +76,16 @@ MatrixGraph* GraphGenerator::generateHamiltonian()
 
         }
 
+        if(!matrixGraph->isCycle())
+        {
+            for(int i = 0; i < this->nodes; i++)
+            {
+                delete[] matrixGraph->edges[i];
+
+            }
+
+        }
+
     }
 
     return matrixGraph;

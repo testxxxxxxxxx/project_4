@@ -6,12 +6,15 @@ result=""
 
 function main()
 {
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/11)"
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/13)" 
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/16)" 
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/17)"
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/18)"
-    $result="$(../target/debug/project_4 --hamilton < ./benchmark_data/19)"    
+    ../target/debug/project_4 --hamilton < ./benchmark_data/1
+    ../target/debug/project_4 --hamilton < ./benchmark_data/2 
+    ../target/debug/project_4 --hamilton < ./benchmark_data/3 
+    ../target/debug/project_4 --hamilton < ./benchmark_data/4
+    ../target/debug/project_4 --hamilton < ./benchmark_data/5
+    ../target/debug/project_4 --hamilton < ./benchmark_data/6
+    ../target/debug/project_4 --hamilton < ./benchmark_data/6_5
+    ../target/debug/project_4 --hamilton < ./benchmark_data/6_6
+    ../target/debug/project_4 --hamilton < ./benchmark_data/6_7   
 
 }
 
