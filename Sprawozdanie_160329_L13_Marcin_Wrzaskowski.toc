@@ -14,4 +14,4 @@
 \contentsline {subsection}{\numberline {4.1}Skala liniowa t(ms): }{6}{}%
 \contentsline {subsection}{\numberline {4.2}Skala logarytmiczna t(ms): }{7}{}%
 \contentsline {section}{\numberline {5}Obserwacje zwiazane z działaniem obu algorytmów w zależności od nasycenia grafu: }{7}{}%
-\contentsline {section}{\numberline {6}Podsumowanie: }{7}{}%
+\contentsline {section}{\numberline {6}Podsumowanie: }{8}{}%

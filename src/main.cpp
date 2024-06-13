@@ -1,3 +1,6 @@
+//Author: Marcin Wrzaskowski
+//Index number: 160329 
+
 #include <iostream>
 #include "../include/CommandLineEngine.hpp"
 #include "../include/GraphGenerator.hpp"
